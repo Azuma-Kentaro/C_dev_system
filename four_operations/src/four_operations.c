@@ -15,7 +15,7 @@
  * @param [in] b 加算する第2の整数
  * @return a と b の合計
  */
-int8_t add(int8_t a, int8_t b)
+int8_t myadd(int8_t a, int8_t b)
 {
     int8_t result;
 
@@ -32,7 +32,7 @@ int8_t add(int8_t a, int8_t b)
  * @param [in] b 減算の減算子（右オペランド）
  * @return a - b の結果
  */
-int8_t sub(int8_t a, int8_t b)
+int8_t mysub(int8_t a, int8_t b)
 {
     int8_t result;
 
@@ -49,7 +49,7 @@ int8_t sub(int8_t a, int8_t b)
  * @param [in] b 乗算する第2の整数
  * @return a と b の積
  */
-int8_t mul(int8_t a, int8_t b)
+int8_t mymul(int8_t a, int8_t b)
 {
     int8_t result;
 
@@ -66,7 +66,7 @@ int8_t mul(int8_t a, int8_t b)
  * @param [in] b 除算の除数（右オペランド）
  * @return a / b の結果
  */
-int8_t div(int8_t a, int8_t b)
+int8_t mydiv(int8_t a, int8_t b)
 {
     int8_t result;
 

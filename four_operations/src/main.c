@@ -10,9 +10,9 @@
 
 int main(int argc, char *argv[])
 {
-    printf("add(1, 2) = %d\n", add(1, 2));
-    printf("sub(1, 2) = %d\n", sub(1, 2));
-    printf("mul(2, 3) = %d\n", mul(2, 3));
-    printf("div(6, 2) = %d\n", div(6, 2));
+    printf("myadd(1, 2) = %d\n", myadd(1, 2));
+    printf("mysub(1, 2) = %d\n", mysub(1, 2));
+    printf("mymul(2, 3) = %d\n", mymul(2, 3));
+    printf("mydiv(6, 2) = %d\n", mydiv(6, 2));
     return 0;
 }

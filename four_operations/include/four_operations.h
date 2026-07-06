@@ -18,25 +18,25 @@ extern "C" {
  * @brief 2つの整数を加算する。
  *
  */
-int8_t add(int8_t a, int8_t b);
+int8_t myadd(int8_t a, int8_t b);
 
 /**
  * @brief 2つの整数を減算する。
  *
  */
-int8_t sub(int8_t a, int8_t b);
+int8_t mysub(int8_t a, int8_t b);
 
 /**
  * @brief 2つの整数を乗算する。
  *
  */
-int8_t mul(int8_t a, int8_t b);
+int8_t mymul(int8_t a, int8_t b);
 
 /**
  * @brief 2つの整数を除算する。
  *
  */
-int8_t div(int8_t a, int8_t b);
+int8_t mydiv(int8_t a, int8_t b);
 
 #ifdef __cplusplus
 }
