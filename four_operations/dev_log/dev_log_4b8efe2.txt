@@ -1,0 +1,14 @@
+Message 1:
+各TEST_Fの前にDoxygen形式のコメントを記述してほしい
+
+Message 2:
+変更を許可します。
+
+Message 3:
+AddTestクラスがAdd関数のテストを行うためのテストフィクスチャであることを示すDoxygenコメントを追加してほしい
+
+Message 4:
+変更を許可します。
+
+Message 5:
+ここまでに私が入力した内容をfour_operations/dev_log_[直前のコミットハッシュ].txtに出力してほしい。既存ファイルと同じようになること。
