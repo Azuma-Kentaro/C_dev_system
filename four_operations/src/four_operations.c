@@ -40,3 +40,20 @@ int8_t sub(int8_t a, int8_t b)
 
     return result;
 }
+
+
+/**
+ * @brief 2つの整数を乗算する。
+ *
+ * @param [in] a 乗算する第1の整数
+ * @param [in] b 乗算する第2の整数
+ * @return a と b の積
+ */
+int8_t mul(int8_t a, int8_t b)
+{
+    int8_t result;
+
+    result = a * b;
+
+    return result;
+}

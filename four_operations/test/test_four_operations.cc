@@ -280,3 +280,85 @@ TEST_F(SubTest, PositiveAndNegative)
     int8_t res = sub(a, b);
     EXPECT_EQ(res, 2);
 }
+
+
+/**
+ * @brief mul関数のテストを行うためのテストフィクスチャ。
+ */
+class MulTest : public ::testing::Test
+{
+protected:
+    void SetUp() override
+    {
+    }
+
+    void TearDown() override
+    {
+    }
+};
+
+/**
+ * @brief mul(0, 5) が 0 を返すことを確認する。
+ */
+TEST_F(MulTest, ZeroAndPositive)
+{
+    int8_t a = 0;
+    int8_t b = 5;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief mul(0, -5) が 0 を返すことを確認する。
+ */
+TEST_F(MulTest, ZeroAndNegative)
+{
+    int8_t a = 0;
+    int8_t b = -5;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief mul(2, 3) が 6 を返すことを確認する。
+ */
+TEST_F(MulTest, PositiveAndPositive)
+{
+    int8_t a = 2;
+    int8_t b = 3;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, 6);
+}
+
+/**
+ * @brief mul(-2, -3) が 6 を返すことを確認する。
+ */
+TEST_F(MulTest, NegativeAndNegative)
+{
+    int8_t a = -2;
+    int8_t b = -3;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, 6);
+}
+
+/**
+ * @brief mul(2, -3) が -6 を返すことを確認する。
+ */
+TEST_F(MulTest, PositiveAndNegative)
+{
+    int8_t a = 2;
+    int8_t b = -3;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, -6);
+}
+
+/**
+ * @brief mul(127, 2) がオーバーフローして -2 を返すことを確認する。
+ */
+TEST_F(MulTest, PositiveOverflow)
+{
+    int8_t a = 127;
+    int8_t b = 2;
+    int8_t res = mul(a, b);
+    EXPECT_EQ(res, -2);
+}

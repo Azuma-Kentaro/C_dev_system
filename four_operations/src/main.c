@@ -12,5 +12,6 @@ int main(int argc, char *argv[])
 {
     printf("add(1, 2) = %d\n", add(1, 2));
     printf("sub(1, 2) = %d\n", sub(1, 2));
+    printf("mul(2, 3) = %d\n", mul(2, 3));
     return 0;
 }
