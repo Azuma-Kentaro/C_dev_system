@@ -20,6 +20,12 @@ extern "C" {
  */
 int8_t add(int8_t a, int8_t b);
 
+/**
+ * @brief 2つの整数を減算する。
+ *
+ */
+int8_t sub(int8_t a, int8_t b);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

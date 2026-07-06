@@ -132,3 +132,151 @@ TEST_F(AddTest, PositiveAndNegativeWithNegativeAbsoluteLarger)
     int8_t sum = add(a, b);
     EXPECT_EQ(sum, -1);
 }
+
+
+/**
+ * @brief sub関数のテストを行うためのテストフィクスチャ。
+ */
+class SubTest : public ::testing::Test
+{
+protected:
+    void SetUp() override
+    {
+    }
+
+    void TearDown() override
+    {
+    }
+};
+
+/**
+ * @brief sub(0, 0) が 0 を返すことを確認する。
+ */
+TEST_F(SubTest, ZeroAndZero)
+{
+    int8_t a = 0;
+    int8_t b = 0;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief sub(0, 1) が -1 を返すことを確認する。
+ */
+TEST_F(SubTest, ZeroAndPositive)
+{
+    int8_t a = 0;
+    int8_t b = 1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -1);
+}
+
+/**
+ * @brief sub(1, 1) が 0 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndPositiveWithSameAbsolute)
+{
+    int8_t a = 1;
+    int8_t b = 1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief sub(2, 1) が 1 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndPositiveWithFirstOperandLarger)
+{
+    int8_t a = 2;
+    int8_t b = 1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 1);
+}
+
+/**
+ * @brief sub(1, 2) が -1 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndPositiveWithSecondOperandLarger)
+{
+    int8_t a = 1;
+    int8_t b = 2;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -1);
+}
+
+/**
+ * @brief sub(127, -1) がオーバーフローして -128 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveOverflow)
+{
+    int8_t a = 127;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -128);
+}
+
+/**
+ * @brief sub(0, -1) が 1 を返すことを確認する。
+ */
+TEST_F(SubTest, ZeroAndNegative)
+{
+    int8_t a = 0;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 1);
+}
+
+/**
+ * @brief sub(-1, -1) が 0 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeAndNegativeWithSameAbsolute)
+{
+    int8_t a = -1;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief sub(-1, -2) が 1 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeAndNegativeWithFirstOperandLarger)
+{
+    int8_t a = -1;
+    int8_t b = -2;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 1);
+}
+
+/**
+ * @brief sub(-2, -1) が -1 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeAndNegativeWithSecondOperandLarger)
+{
+    int8_t a = -2;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -1);
+}
+
+/**
+ * @brief sub(-128, 1) がオーバーフローして 127 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeOverflow)
+{
+    int8_t a = -128;
+    int8_t b = 1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 127);
+}
+
+/**
+ * @brief sub(1, -1) が 2 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndNegative)
+{
+    int8_t a = 1;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 2);
+}
