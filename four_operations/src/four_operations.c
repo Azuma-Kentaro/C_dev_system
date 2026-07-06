@@ -23,3 +23,20 @@ int8_t add(int8_t a, int8_t b)
 
     return result;
 }
+
+
+/**
+ * @brief 2つの整数を減算する。
+ *
+ * @param [in] a 減算の被演算子（左オペランド）
+ * @param [in] b 減算の減算子（右オペランド）
+ * @return a - b の結果
+ */
+int8_t sub(int8_t a, int8_t b)
+{
+    int8_t result;
+
+    result = a - b;
+
+    return result;
+}
