@@ -32,6 +32,12 @@ int8_t sub(int8_t a, int8_t b);
  */
 int8_t mul(int8_t a, int8_t b);
 
+/**
+ * @brief 2つの整数を除算する。
+ *
+ */
+int8_t div(int8_t a, int8_t b);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */

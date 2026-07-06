@@ -362,3 +362,122 @@ TEST_F(MulTest, PositiveOverflow)
     int8_t res = mul(a, b);
     EXPECT_EQ(res, -2);
 }
+
+
+/**
+ * @brief div関数のテストを行うためのテストフィクスチャ。
+ */
+class DivTest : public ::testing::Test
+{
+protected:
+    void SetUp() override
+    {
+    }
+
+    void TearDown() override
+    {
+    }
+};
+
+/**
+ * @brief div(0, 5) が 0 を返すことを確認する。
+ */
+TEST_F(DivTest, ZeroAndPositive)
+{
+    int8_t a = 0;
+    int8_t b = 5;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief div(0, -5) が 0 を返すことを確認する。
+ */
+TEST_F(DivTest, ZeroAndNegative)
+{
+    int8_t a = 0;
+    int8_t b = -5;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief div(6, 2) が 3 を返すことを確認する。
+ */
+TEST_F(DivTest, PositiveAndPositive)
+{
+    int8_t a = 6;
+    int8_t b = 2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 3);
+}
+
+/**
+ * @brief div(5, 2) が 2 を返すことを確認する。
+ */
+TEST_F(DivTest, PositiveAndPositiveWithRemainder)
+{
+    int8_t a = 5;
+    int8_t b = 2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 2);
+}
+
+/**
+ * @brief div(-6, 2) が -3 を返すことを確認する。
+ */
+TEST_F(DivTest, NegativeAndPositive)
+{
+    int8_t a = -6;
+    int8_t b = 2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, -3);
+}
+
+/**
+ * @brief div(6, -2) が -3 を返すことを確認する。
+ */
+TEST_F(DivTest, PositiveAndNegative)
+{
+    int8_t a = 6;
+    int8_t b = -2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, -3);
+}
+
+/**
+ * @brief div(-6, -2) が 3 を返すことを確認する。
+ */
+TEST_F(DivTest, NegativeAndNegative)
+{
+    int8_t a = -6;
+    int8_t b = -2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 3);
+}
+
+/**
+ * @brief div(-5, -2) が 2 を返すことを確認する。
+ */
+TEST_F(DivTest, NegativeAndNegativeWithRemainder)
+{
+    int8_t a = -5;
+    int8_t b = -2;
+    int8_t res = div(a, b);
+    EXPECT_EQ(res, 2);
+}
+
+/**
+ * @brief div(6, 0) が異常終了することを確認する。
+ */
+TEST_F(DivTest, DivisionByZero)
+{
+    EXPECT_DEATH(
+        {
+            int8_t a = 6;
+            int8_t b = 0;
+            div(a, b);
+        },
+        ""
+    );
+}
