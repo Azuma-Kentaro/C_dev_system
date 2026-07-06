@@ -1,0 +1,17 @@
+Message 1:
+他の関数と同じ形式で除算を行うdiv関数を実装してほしい
+
+Message 2:
+単体テストも追加してほしい
+
+Message 3:
+NegativeAndNegativeWithRemainderも追加してほしい
+
+Message 4:
+除算する数が0の場合のテストケースを追加してほしい
+
+Message 5:
+main関数にdiv関数の実行例を追加してほしい
+
+Message 6:
+これまでに入力したメッセージをfour_operations/dev_log/以下に出力したい。ファイル名と内容は既存のものを参考にすること。ファイル名に使用するコミットハッシュは短くすること。
