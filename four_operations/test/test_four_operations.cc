@@ -174,12 +174,34 @@ TEST_F(SubTest, ZeroAndPositive)
 /**
  * @brief sub(1, 1) が 0 を返すことを確認する。
  */
-TEST_F(SubTest, PositiveAndPositive)
+TEST_F(SubTest, PositiveAndPositiveWithSameAbsolute)
 {
     int8_t a = 1;
     int8_t b = 1;
     int8_t res = sub(a, b);
     EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief sub(2, 1) が 1 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndPositiveWithFirstOperandLarger)
+{
+    int8_t a = 2;
+    int8_t b = 1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 1);
+}
+
+/**
+ * @brief sub(1, 2) が -1 を返すことを確認する。
+ */
+TEST_F(SubTest, PositiveAndPositiveWithSecondOperandLarger)
+{
+    int8_t a = 1;
+    int8_t b = 2;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -1);
 }
 
 /**
@@ -207,12 +229,34 @@ TEST_F(SubTest, ZeroAndNegative)
 /**
  * @brief sub(-1, -1) が 0 を返すことを確認する。
  */
-TEST_F(SubTest, NegativeAndNegative)
+TEST_F(SubTest, NegativeAndNegativeWithSameAbsolute)
 {
     int8_t a = -1;
     int8_t b = -1;
     int8_t res = sub(a, b);
     EXPECT_EQ(res, 0);
+}
+
+/**
+ * @brief sub(-1, -2) が 1 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeAndNegativeWithFirstOperandLarger)
+{
+    int8_t a = -1;
+    int8_t b = -2;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, 1);
+}
+
+/**
+ * @brief sub(-2, -1) が -1 を返すことを確認する。
+ */
+TEST_F(SubTest, NegativeAndNegativeWithSecondOperandLarger)
+{
+    int8_t a = -2;
+    int8_t b = -1;
+    int8_t res = sub(a, b);
+    EXPECT_EQ(res, -1);
 }
 
 /**
@@ -229,32 +273,10 @@ TEST_F(SubTest, NegativeOverflow)
 /**
  * @brief sub(1, -1) が 2 を返すことを確認する。
  */
-TEST_F(SubTest, PositiveAndNegativeWithSameAbsolute)
+TEST_F(SubTest, PositiveAndNegative)
 {
     int8_t a = 1;
     int8_t b = -1;
     int8_t res = sub(a, b);
     EXPECT_EQ(res, 2);
-}
-
-/**
- * @brief sub(2, -1) が 3 を返すことを確認する。
- */
-TEST_F(SubTest, PositiveAndNegativeWithPositiveAbsoluteLarger)
-{
-    int8_t a = 2;
-    int8_t b = -1;
-    int8_t res = sub(a, b);
-    EXPECT_EQ(res, 3);
-}
-
-/**
- * @brief sub(1, -2) が 3 を返すことを確認する。
- */
-TEST_F(SubTest, PositiveAndNegativeWithNegativeAbsoluteLarger)
-{
-    int8_t a = 1;
-    int8_t b = -2;
-    int8_t res = sub(a, b);
-    EXPECT_EQ(res, 3);
 }
