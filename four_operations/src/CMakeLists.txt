@@ -1,14 +1,7 @@
-cmake_minimum_required(VERSION 3.14)
-project(four_operations LANGUAGES C)
+# 製品の主要ロジックをライブラリ化（テスト側からもリンクしやすくするため）
+add_library(lib_four_operations four_operations.c)
+target_include_directories(lib_four_operations PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-
-file(GLOB FOUR_OPERATIONS_SOURCES CONFIGURE_DEPENDS *.c)
-
-add_library(four_operations STATIC ${FOUR_OPERATIONS_SOURCES})
-target_include_directories(four_operations
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/../include
-)
-
+# 製品の実行ファイルを作成
+add_executable(app_four_operations main.c)
+target_link_libraries(app_four_operations PRIVATE lib_four_operations)
