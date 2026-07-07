@@ -1,0 +1,8 @@
+Message 1:
+@workspace add関数と同じような形式でsub関数を実装してほしい
+
+Message 2:
+sub用の単体テストを追加してほしい
+
+Message 3:
+これまでに私が入力したメッセージをfour_operations/dev_log/dev_logに記録してほしい。内容を読んで同じになるようにすること。

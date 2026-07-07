@@ -1,0 +1,8 @@
+Message 1:
+これまでに私が入力したメッセージをfour_operations/dev_log/以下に出力してほしい、という指示は何回も出している。そのため、この指示をCopilotに対するコマンドとして実行できるようにしたい。
+
+Message 2:
+/dev_log
+
+Message 3:
+/dev_log

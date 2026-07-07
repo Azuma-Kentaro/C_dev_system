@@ -1,0 +1,21 @@
+name: Run build process on pull request
+
+on:
+    push:
+        branches: [main, develop]
+    pull_request:
+        types: [opened, synchronize, reopened]
+
+jobs:
+    build-job:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Configure and Build
+              run: |
+                cd four_operations &&
+                cmake -B build -S .
+                cmake --build build -- -j
