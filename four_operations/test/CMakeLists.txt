@@ -10,5 +10,10 @@ add_executable(test_four_operations test_four_operations.cc)
 
 target_link_libraries(test_four_operations PRIVATE lib_four_operations PRIVATE GTest::gtest_main)
 
+# カバレッジ用のオプション
+# テストコードそのもののカバレッジは不要のためtarget_compile_optionsをコメントアウト
+#target_compile_options(test_four_operations PRIVATE --coverage)
+target_link_options(test_four_operations PRIVATE --coverage)
+
 include(GoogleTest)
 gtest_discover_tests(test_four_operations)
