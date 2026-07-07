@@ -16,5 +16,6 @@ jobs:
 
             - name: Configure and Build
               run: |
+                cd four_operations &&
                 cmake -B build -S .
                 cmake --build build -- -j
