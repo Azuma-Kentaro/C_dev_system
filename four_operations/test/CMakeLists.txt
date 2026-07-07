@@ -17,3 +17,13 @@ target_link_options(test_four_operations PRIVATE --coverage)
 
 include(GoogleTest)
 gtest_discover_tests(test_four_operations)
+
+# ビルド完了後、テストプログラムを実行する
+add_custom_command(
+    TARGET test_four_operations
+    POST_BUILD
+    COMMAND $<TARGET_FILE:test_four_operations>
+    COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/build/coverage
+    COMMAND gcovr --html --html-details -o ${CMAKE_SOURCE_DIR}/build/coverage/coverage_result.html
+    COMMENT "Running post-build process..."
+)
