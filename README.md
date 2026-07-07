@@ -11,3 +11,4 @@ I focused on establishing workflows for building, testing, and automation.
 - EditorConfig
 - CMake
 - GitHub Copilot
+- GitHub Actions
