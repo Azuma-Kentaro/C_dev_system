@@ -14,9 +14,6 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v4
 
-            - name: Install gcovr
-              run: pip install gcovr
-
             - name: Configure and Build
               run: |
                 cd four_operations &&

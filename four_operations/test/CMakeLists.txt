@@ -24,6 +24,5 @@ add_custom_command(
     POST_BUILD
     COMMAND $<TARGET_FILE:test_four_operations>
     COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/build/coverage
-    COMMAND gcovr --html --html-details -o ${CMAKE_SOURCE_DIR}/build/coverage/coverage_result.html
     COMMENT "Running post-build process..."
 )
