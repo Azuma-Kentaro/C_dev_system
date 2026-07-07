@@ -8,7 +8,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(test_four_operations test_four_operations.cc)
 
-target_link_libraries(test_four_operations PRIVATE lib_four_operations PUBLIC GTest::gtest_main)
+target_link_libraries(test_four_operations PRIVATE lib_four_operations PRIVATE GTest::gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(test_four_operations)
