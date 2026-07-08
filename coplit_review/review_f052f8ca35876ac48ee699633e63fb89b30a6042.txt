@@ -1,0 +1,28 @@
+Workspace Review
+Commit: f052f8ca35876ac48ee699633e63fb89b30a6042
+Date: 2026-07-08
+
+概要:
+- プロジェクト: four_operations（C + GoogleTest、CMake）
+- 主要ファイル: four_operations/CMakeLists.txt, four_operations/src/CMakeLists.txt, four_operations/test/CMakeLists.txt
+- 実装: ライブラリ `lib_four_operations`（four_operations/src/four_operations.c）、実行ファイル `app_four_operations`、テスト `test_four_operations`（GoogleTest）
+- カバレッジ: 各ターゲットに `--coverage` が付与され、テスト後にカバレッジ用ディレクトリを作成する仕掛けあり
+
+発見した注意点・リスク:
+1. 符号付き 8-bit (`int8_t`) のオーバーフローをテストが期待しているが、C 標準では符号付き整数のオーバーフローは未定義動作となるため移植性リスクがある。
+2. `mydiv` は単に `a / b` を行っており、除算ゼロでクラッシュすることをテストで期待している（`EXPECT_DEATH`）。実行環境によって振る舞いが異なる可能性がある。
+3. `build/` 以下に生成物や googletest のソースが混在している。CI やクリーン運用の観点で整理が必要な場合がある。
+
+短期推奨:
+- オーバーフローと関連する設計意図（ラップを期待している等）を README または該当テストに明記する。
+- 移植性を重視するなら `int8_t` の使用を見直す（より大きな型を使う、あるいは明示的にラップ演算を行う関数に置き換える）。
+- 除算ゼロの扱いを明確化する（クラッシュを期待するならドキュメント化、または `mydiv` に事前チェックを入れてエラー処理する）。
+
+次のアクション候補:
+- ビルドとテストを実行して実際の結果とカバレッジを収集する（希望する場合、こちらで実行します）。
+- `mydiv` の安全化や `int8_t` の見直しを含むパッチ作成（要指示）。
+
+生成場所:
+- coplit_review/review_f052f8ca35876ac48ee699633e63fb89b30a6042.txt
+
+作成者: レビュー自動出力
