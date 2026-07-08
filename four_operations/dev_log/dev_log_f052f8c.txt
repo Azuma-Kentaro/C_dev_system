@@ -1,0 +1,15 @@
+Message 1:
+@workspace /review
+
+Message 2:
+レビューで指摘した内容をファイルに出力してほしい。出力先のディレクトリはcoplit_reviewとして、ファイル名はreview_[直前のコミットハッシュ].txtとしてほしい
+
+Message 3:
+/dev_log
+
+Message 4:
+レビュー指摘を作成してもらうまでに私が入力したメッセージをfour_operations/dev_log/以下にファイル出力してほしい
+
+Message 5:
+集約はしない。このセッションで私が入力したメッセージのみを新しいファイルに記録してほしい
+
